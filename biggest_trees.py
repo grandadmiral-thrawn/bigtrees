@@ -7,7 +7,7 @@ http://andrewsforest.oregonstate.edu/data/abstract.cfm?dbcode=Tp001
 """
 """
 x is dbh, in cm
-"big trees" is any trees with cm dbh > 200 cm.
+"big trees" is any trees with cm dbh > 150 cm.
 equation priority: First select the best notch in Tier 1, then 
 select the best notch in Tier 2. Record as T1.1.T2.3, for example. 
 
@@ -47,7 +47,8 @@ import pymssql
 
 
 def drange(start, stop, step):
-    """ define decimal interval range over which to iterate
+    """ 
+    define decimal interval range over which to iterate
         note that this is a function generator and does not need
         a return clause.
 
@@ -62,7 +63,8 @@ def drange(start, stop, step):
 
 def segi(x):
 
-    """ T1.1.T2.4. these are for sequoia in seq ntl park
+    """ 
+    T1.1.T2.4. these are for sequoia in seq ntl park
     proxy: none
     badness: no foliage
     source: biopak, equation 395
@@ -92,6 +94,7 @@ def pisi(x):
     height = 1.37 + 65.2776*(1-math.exp(-0.012361*x)**0.9679)
     biomass = 1.0222*woodden*(0.0003460*x**2.3320)
     jenkbio = round(0.001*math.exp(-2.2304+2.4435*math.log1p(round(x,2))),4)
+
     """ 
     T1.3.T2.1. these are sitka spruce in olympic np 
     proxy: the height is from pisi on north oregon coastal
@@ -151,7 +154,8 @@ def chno(x):
     biomass = biostemwood + biostembark + biostemtotal
 
     """
-    """ T1.6.T2.3a these are alaska "cedar" for general
+    """ 
+    T1.6.T2.3a these are alaska "cedar" for general
     proxy: none
     badness: valid up to 43 cm only
     source: BioPak 927 via SQL query to TP07202; height from
@@ -166,7 +170,8 @@ def chno(x):
 
 def rockythpl(x):
 
-    """T1.1.T2.1. this is THPL for the rocky mountains
+    """
+    T1.1.T2.1. this is THPL for the rocky mountains
     in the stands 'TO11, TO04, AO03'
     proxy: none
     badness: none
@@ -181,7 +186,8 @@ def rockythpl(x):
 
 def andrewsthpl(x):
 
-    """T1.1.T2.1. this is THPL for the andrews forest based on RS
+    """
+    T1.1.T2.1. this is THPL for the andrews forest based on RS
     in the stand 'RS29'
     proxy: none
     badness: none
@@ -227,7 +233,8 @@ def andrewsthpl(x):
 
 def rockypsme(x):
 
-    """T1.1.T2.1. this is PSME for the rocky mountains
+    """
+    T1.1.T2.1. this is PSME for the rocky mountains
     in the stands 'TO11, TO04, AO03'
     proxy: none
     badness: none
@@ -242,7 +249,8 @@ def rockypsme(x):
 
 def abco(x):
 
-    """T1.1.T2.1. equations for ABCO from SQNP
+    """
+    T1.1.T2.1. equations for ABCO from SQNP
     applied to SQNP
     proxy: none
     source: TP01 documentation from ht4snag and tv00908
@@ -305,7 +313,8 @@ def andrewspsme(x, standid):
 
 def pila(x):
 
-    """T1.3.T2.1 PILA from SQNP used in W Cascades
+    """
+    T1.3.T2.1 PILA from SQNP used in W Cascades
     proxy: location, SQNP, range may be different (unknown)
     badness: potentially too broad
     source: tv009
@@ -344,7 +353,8 @@ def tshe(x, standid):
 
 def abpr(x):
 
-    """T1.1.T2.1. equations for ABPR from NFGY
+    """
+    T1.1.T2.1. equations for ABPR from NFGY
     applied to GFMY
     proxy: none
     source: TP01 documentation from ht4snag and tv00908
@@ -354,7 +364,9 @@ def abpr(x):
     woodden = 0.438
     biomass = 1.0171*woodden*(0.000123*x**2.5812)
     jenkbio = round(0.001*math.exp(-2.5384+2.4814*math.log1p(round(x,2))),5)
-    """T1.1.T2.3a equations for ABPR from NFGY
+    
+    """
+    T1.1.T2.3a equations for ABPR from NFGY
     but the height measurement is for PSME
     proxy: PSME
     source: TP01 documentation from ht4snag and tv00908

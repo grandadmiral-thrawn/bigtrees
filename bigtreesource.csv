@@ -1,13 +1,18 @@
-SPECIES, COMPONENT, GEO, STANDID, RAWFORM, B0, B1, B2, baskerville, woodden
-SEGI, BIOMASS, ALL, NULL, "math.exp(-11.0174 + 2.5907 * math.log1p(float(x)))", -11.0174, 2.5907, None, None, None
-PISI, HEIGHT, ALL, NULL, "height = 1.37 + 65.2776*(1-math.exp(-0.012361*x)**0.9679)", 65.2776, -0.012361, 0.9679, None, 0.369
-PISI, BIOMASS, ALL, NULL, "biomass = 1.0222*woodden*(0.0003460*x**2.3320)", 0.0003460, 2.3320, None, 1.0222, 0.369
-CHNO, BIOMASS, ALL, NULL, "biomass = 1.016*woodden*(0.000186*x**2.4024)", 0.000186, 2.4024, None, 1.016, 0.31
-THPL, BIOMASS, ROCKY, NULL, "biomass = 1.016*woodden*(0.000186*x**2.4024)", 0.000186, 2.4024, None, 1.016, 0.31
-THPL, HEIGHT, ROCKY, NULL, "height = 1.37 + (56.9157*(1-math.exp(-0.012625*x))**0.9359)", 56.9157, -0.012625, 0.9359, None, 0.31
-THPL, BIOMASS, WEST, NULL, "biomass = woodden*(0.218*height*(0.01*x)**2)", None, 0.218, None, None, 0.31
-PSME, BIOMASS, ROCKY, NULL, "biomass = 1.0309*woodden*(0.000215*x**2.4367)",0.000215, 2.4367, None, 1.0309, 0.45
-PSME, HEIGHT, WEST, RS28, "height = 1.37+ 56.8776*(1-math.exp(-0.016381*x))**1.0688", 56.8776, -0.016381, 1.0688, None, 0.45
-PSME, HEIGHT, WEST, NULL, "height = 1.37 + 76.8553*(1-math.exp(-0.011561*x))**0.9288", 76.8553, -0.011561, 0.9288, None, 0.45
-PSME, BIOMASS, WEST, NULL,  "biomass = woodden*(0.2346*height*(0.01*x)**2)", None, 0.2346, None, None, 0.45
-ABPR, BIOMASS, ALL, NULL, "biomass = 1.0171*woodden*(0.000123*x**2.5812)", 0.000123, 2.5812, None, 1.0171, 0.438 
+SPECIES, COMPONENT, GEO, STANDID, RAWFORM, B0, B1, B2, baskerville, woodden, QUALITY
+SEGI, BIOMASS, ALL, NULL, "biomass = math.exp(-11.0174 + 2.5907 * math.log1p(float(x)))", -11.0174, 2.5907, None, None, None, "T1.1.T2.4.""
+PISI, HEIGHT, ALL, NULL, "height = 1.37 + 65.2776*(1-math.exp(-0.012361*x)**0.9679)", 65.2776, -0.012361, 0.9679, None, 0.369, "T1.1.T2.1."
+PISI, BIOMASS, ALL, NULL, "biomass = 1.0222*woodden*(0.0003460*x**2.3320)", 0.0003460, 2.3320, None, 1.0222, 0.369, "T1.1.T2.1."
+CHNO, BIOMASS, ALL, NULL, "biomass = 1.016*woodden*(0.000186*x**2.4024)", 0.000186, 2.4024, None, 1.016, 0.31, "T1.3.T2.1."
+THPL, BIOMASS, ROCKY, NULL, "biomass = 1.016*woodden*(0.000186*x**2.4024)", 0.000186, 2.4024, None, 1.016, 0.31, "T1.1.T2.1."
+THPL, HEIGHT, ROCKY, NULL, "height = 1.37 + (56.9157*(1-math.exp(-0.012625*x))**0.9359)", 56.9157, -0.012625, 0.9359, None, 0.31, "T1.1.T2.1."
+THPL, BIOMASS, WEST, NULL, "biomass = woodden*(0.218*height*(0.01*x)**2)", None, 0.218, None, None, 0.31, "T1.1.T2.1."
+PSME, BIOMASS, ROCKY, NULL, "biomass = 1.0309*woodden*(0.000215*x**2.4367)",0.000215, 2.4367, None, 1.0309, 0.45, "T1.1.T2.1."
+PSME, HEIGHT, WEST, RS28, "height = 1.37+ 56.8776*(1-math.exp(-0.016381*x))**1.0688", 56.8776, -0.016381, 1.0688, None, 0.45, "T1.1.T2.1."
+PSME, HEIGHT, WEST, NULL, "height = 1.37 + 76.8553*(1-math.exp(-0.011561*x))**0.9288", 76.8553, -0.011561, 0.9288, None, 0.45, "T1.1.T2.1."
+PSME, BIOMASS, WEST, NULL,  "biomass = woodden*(0.2346*height*(0.01*x)**2)", None, 0.2346, None, None, 0.45, "T1.1.T2.1."
+ABPR, BIOMASS, ALL, NULL, "biomass = 1.0171*woodden*(0.000123*x**2.5812)", 0.000123, 2.5812, None, 1.0171, 0.438, "T1.1.T2.1." 
+PILA, BIOMASS, ALL, NULL, "biomass = 1.0211*woodden*(0.0000557*x**2.7089)", 0.0000557, 2.7089, None, 1.0211, 0.396, "T1.3.T2.1"
+TSHE, HEIGHT, ALL, ELEV>1000, "height = 1.37+57.1592*(1-math.exp(-0.023814*x))**1.5623", 57.1592, -0.023814, 1.5623, None, 0.42, "T1.1.T2.2."
+TSHE, HEIGHT, ALL, ELEV<1000, "1.37+61.5681*(1-math.exp(-0.017278*x))**1.0723", 61.5681, -0.017278, 1.0723, None, 0.42, "T1.1.T2.2."
+TSHE, BIOMASS, ALL, NULL, "biomass = woodden*(0.2723*height*(0.01*x)**2)", None, 0.2723, None, None, 0.42, "T1.1.T2.2."
+ABCO, BIOMASS, ALL, NULL, "biomass = 1.0171*woodden*(0.000123*x**2.5812)", 0.000123, 2.5812, None, 1.0171, 0.438, "T1.3.T2.1."
