@@ -16,6 +16,6 @@ setup(
     url="https://github.com/dataRonin/bigtrees",
     download_url = "https://github.com/dataRonin/bigtrees/tarball/0.1",
     packages=["bigtrees"],
-    install_requires=["pymsssql", "numpy", "matplotlib", "flask"],
+    install_requires=["pymssql", "numpy", "matplotlib", "flask"],
     keywords = ["biomass", "trees"]
 )

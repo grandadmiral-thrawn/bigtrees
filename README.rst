@@ -1,6 +1,9 @@
 bigtrees
 ========
 
+.. image:: https://travis-ci.org/dataRonin/bigtrees.svg?branch=master
+    :target: https://travis-ci.org/dataRonin/bigtrees
+
 The bigtrees/ source contains Python functions for computing biomass for
 trees > 150 cm in the long-term research plots. Of approximately 1.3
 million unique instances of trees, those larger than 150 cm diameter

@@ -1,3 +1,4 @@
+import sys
 import csv
 import math
 import decimal 
@@ -6,6 +7,9 @@ import numpy as np
 import os
 import itertools
 import pymssql
+
+HERE = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert(0, os.path.join(HERE, os.pardir, "bigtrees"))
 
 import biggest_trees as bt
 
