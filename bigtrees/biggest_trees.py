@@ -463,8 +463,8 @@ def writeoutput(cursor):
             writer.writerow(myrow)
         #writer.writerow(row)
 
-c = formconnection()
-writeoutput(c)
+# c = formconnection()
+# writeoutput(c)
 '''
 Extract the TREEID, SPECIES, DBH, STAND, STUDY...
 If Bio can be computed from volume based on density, put it in, otherwise None
