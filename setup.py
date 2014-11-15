@@ -14,8 +14,7 @@ setup(
     maintainer_email="<fox@tinybike.net>",
     license="MIT",
     url="https://github.com/dataRonin/bigtrees",
-    download_url = "https://github.com/dataRonin/bigtrees/tarball/0.1",
     packages=["bigtrees"],
-    install_requires=["pymssql", "numpy", "matplotlib", "flask"],
+    install_requires=["pymssql", "numpy", "matplotlib"],
     keywords = ["biomass", "trees"]
 )
