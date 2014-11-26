@@ -14,10 +14,6 @@ app = Flask(__name__)
 app.secret_key = "lol hi"
 socketio = SocketIO(app)
 
-##########
-# Routes #
-##########
-
 @app.route('/')
 def index():
     return render_template('app.html')
