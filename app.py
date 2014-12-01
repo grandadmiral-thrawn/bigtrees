@@ -3,28 +3,51 @@
 bigtrees web app
 
 """
-from gevent import monkey
-monkey.patch_all()
-
-import os, platform, requests, json, datetime, time
-from flask import Flask, session, request, escape, flash, url_for, redirect, render_template, g, send_from_directory
-from flask.ext.socketio import SocketIO, emit
+from __future__ import division
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
-app.secret_key = "lol hi"
-socketio = SocketIO(app)
+app.debug = True
+app.config["datafile"] = "TP001_jenkins.csv"
 
-@app.route('/')
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template('app.html')
+    if request.method == "GET":
+        return render_template("index.html")
+
+    # get species and quantity from the form
+    species = request.form["species"]
+    quantity = round(float(request.form["quantity"]), 1)
+
+    # open the csv data file and go through it line by line until we find
+    # a line that matches both the requested species and quantity
+    with open(app.config["datafile"]) as datafile:
+        for line in datafile:
+            splitline = line.strip().split(',')
+
+            # check if species matches the requested species
+            species_from_file = splitline[0].strip('"')
+            if species == species_from_file:
+
+                # check if the quantity matches the requested quantity
+                quantity_from_file = float(splitline[1])
+                if quantity == quantity_from_file:
+
+                    # this is the value we want!
+                    # send it back to the template (index.html) so the user
+                    # can see it
+                    return render_template("index.html", lookup=splitline[2])
+
+    # if we've reached this point, then we didn't find a match.
+    # send an error message to the template (index.html) so the user knows
+    # the lookup wasn't successful
+    return render_template("index.html", lookup="No match found")
 
 def main():
-    if platform.node() in ('vent',):
-        app.debug = True
-        socketio.run(app)
+    if app.debug:
+        app.run()
     else:
-        app.debug = False
-        socketio.run(app, host='0.0.0.0', port=8080)
+        app.run(host="0.0.0.0", port=7000)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

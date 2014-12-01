@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bigtrees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/google-fonts.css') }}" />
+    <script src="{{ url_for('static', filename='js/vendor/modernizr.js') }}"></script>
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">bigtrees</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span>Menu</span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="divider"></li>
+        </ul>
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="https://github.com/dataRonin/bigtrees">source code</a></li>
+          <li class="divider"></li>
+          <li class="has-dropdown">
+          <a href="#">dropdown</a>
+          <ul class="dropdown">
+            <li><a href="#">option</a></li>
+            <li><a href="#">option</a></li>
+            <li><a href="#">option</a></li>
+          </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <div class="vertical-spacer-25"></div>
+    <div class="row">
+      <div class="large-4 columns">
+        <div class="panel">
+          <h5>Select Species</h5>
+          <hr />
+          <form id="bet-down" method="POST" action="/">
+            <div class="row centered">
+              <div class="large-6 columns end">
+                <select id="species" name="species">
+                  <option value="PSME">PSME</option>
+                  <option value="QUKE" selected="selected">QUKE</option>
+                </select>
+              </div>
+              <div class="large-6 columns">
+                <input type="text" id="quantity" name="quantity" placeholder="Value" required autofocus />
+              </div>
+            </div>
+            <div class="row centered">
+              <div class="large-12 columns end">
+                <button type="submit" class="button small expand">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="large-8 columns">
+        {% if lookup is defined %}
+        <div class="panel">
+          <h5>Results</h5>
+          <p>{{ lookup }}</p>
+          </p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="large-6 columns">
+            <p>&copy; Copyright 2014, Fox Peterson</p>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="mailto:fox@tinybike.net">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.topbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.tab.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.reveal.js') }}"></script>
+    <script>
+      $(document).foundation();
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+  </body>
+</html>

@@ -15,6 +15,6 @@ setup(
     license="MIT",
     url="https://github.com/dataRonin/bigtrees",
     packages=["bigtrees"],
-    install_requires=["pymssql", "numpy", "matplotlib"],
+    install_requires=["Flask"],
     keywords = ["biomass", "trees"]
 )
